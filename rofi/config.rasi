@@ -1,0 +1,102 @@
+/*
+ * ============================================================
+ *              🩸 BERSERK — ROFI
+ * ============================================================
+ */
+
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    display-drun: "APPS";
+    display-run: "RUN";
+    display-window: "WINDOWS";
+    drun-display-format: "{name}";
+    font: "FiraCode Nerd Font 11";
+}
+
+* {
+    bg:        #0B0B0B;
+    bg-alt:    #111111;
+    bg-hover:  #181818;
+
+    red:       #8B0000;
+    red-bright:#B30000;
+    blood:     #5C0000;
+
+    bone:      #D6D0C4;
+    grey:      #77736C;
+    iron:      #3A3A3A;
+
+    background-color: @bg;
+    text-color: @bone;
+}
+
+window {
+    width: 650px;
+    border: 1px;
+    border-color: @red;
+    border-radius: 0px;
+    background-color: @bg;
+    padding: 20px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [
+        inputbar,
+        listview
+    ];
+    spacing: 15px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border: 1px;
+    border-color: @iron;
+    padding: 12px;
+    children: [
+        prompt,
+        entry
+    ];
+}
+
+prompt {
+    background-color: @red;
+    text-color: @bone;
+    padding: 0px 10px;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @bone;
+    placeholder: "Search...";
+    placeholder-color: @grey;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 4px;
+    scrollbar: false;
+}
+
+element {
+    padding: 10px;
+    background-color: transparent;
+    text-color: @bone;
+}
+
+element selected {
+    background-color: @red;
+    text-color: @bone;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 28px;
+    background-color: transparent;
+}
